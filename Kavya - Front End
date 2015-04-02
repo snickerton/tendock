@@ -1,1 +1,50 @@
 
+import javax.swing.Box;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+
+public class GitHubGUI {
+
+	
+	public GitHubGUI()
+	{
+	  {
+	    JFrame myFrame = new JFrame("Front End");
+	  	myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  	myFrame.setSize(1000, 1000);
+	    myFrame.setLocation(400,400);
+	  
+	    
+	    Box bigBox = Box.createVerticalBox();
+	    JLabel add = new JLabel("Add a Message");
+
+	    Box user = Box.createHorizontalBox();
+	    JLabel adduser = new JLabel("User Name:");
+	    JTextField userName = new JTextField();
+	    user.add(adduser);
+	    user.add(userName);
+	    
+	    Box message = Box.createHorizontalBox();
+	    JLabel addmessage = new JLabel("Message:");
+	    JTextArea userMessage = new JTextArea();
+	    message.add(addmessage);
+	    message.add(userMessage);
+	    
+	    
+	    bigBox.add(add);
+	    bigBox.add(user);
+	    bigBox.add(message);
+	    myFrame.add(bigBox);
+	    
+	    
+	    myFrame.pack();
+		myFrame.setVisible(true);
+	    
+	  }
+	}
+	    
+	 
+}
