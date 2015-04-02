@@ -5,10 +5,15 @@ public class Encoder{
   private String file;
   private List<String> messages;
 
-  public Encoder(String filename)
-  {
-	  
-  }
+  public Encoder(String filename) throws FileNotFoundException
+	  {
+		  File file = new File ("File.txt");
+		  PrintWriter david = new PrintWriter ("File.txt");
+		  david.print("String messages");
+		  david.close ();       
+		  
+		  
+	  }
   
   public void write (String plaintext)
   {
