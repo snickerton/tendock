@@ -1,26 +1,3 @@
 import java.util.List;
 
-public class Encoder{
-
-  private String file;
-
-  public Encoder(String filename)
-  {
-  }
-  
-  public void write (String plaintext)
-  {
-	  String n = "";
-	  for (int i = 0; i < plaintext.length() ; i ++)
-	  {
-		  n = n + plaintext.charAt(i);
-	  }
-  }
-  
-  public List<String> read()
-  {
-	 hi 
-  }
-  
-
-}
+public class Encoder{}
