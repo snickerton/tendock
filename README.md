@@ -45,7 +45,7 @@ public List<String> read(){
   }
   
   public List<String> getUsers(){
-    return data.keySet().toArray();
+    return Arrays.asList(data.keySet().toArray();
     Returns a list of every username ALPHABETICALLY ORDERED
   }
   
