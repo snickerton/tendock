@@ -1,11 +1,14 @@
 public class Encoder{
 
+  private String file
+
   public Encoder(String filename)
   {
   }
   
   public void write (String plaintext)
   {
+  
   }
   
   public List<String> read()
