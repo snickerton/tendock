@@ -12,6 +12,8 @@ public void write(String plaintext){
   Writes encoded message. 
   Encryption method:
   <David insert documentation>
+  what am i suppose to insert here
+  
 }
 
 public List<String> read(){
