@@ -6,14 +6,14 @@ public class Encoder{
   private List<String> messages;
 
   public Encoder(String filename) throws FileNotFoundException
-	  {
+  {
 		  File file = new File ("File.txt");
 		  PrintWriter david = new PrintWriter ("File.txt");
 		  david.print("String messages");
 		  david.close ();       
 		  
 		  
-	  }
+  }
   
   public void write (String plaintext)
   {
