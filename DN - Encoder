@@ -1,1 +1,30 @@
+import java.util.List;
 
+public class Encoder{
+
+  private String file;
+  private List<String> messages;
+
+  public Encoder(String filename)
+  {
+	  
+  }
+  
+  public void write (String plaintext)
+  {
+	  String n = "";
+	  for (int i = 0; i < plaintext.length() ; i ++)
+	  {
+		  
+		  n = n + plaintext.hashCode();
+	  }
+  }
+  
+  public List<String> read()
+  {
+	  
+	  return messages;
+  }
+  
+
+}
