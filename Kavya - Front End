@@ -65,10 +65,10 @@ public class FrontEnd {
 	JLabel select = new JLabel("Select User");
 	select.setSize(40, 20);
 	
-	// ** TODO ** - get List of Users from the BackEnd
-    // backEnd myBackEnd = new backEnd();
-    // String[] myList = myBackEnd.getUsers();
-    String [] myList = {"A","B","C"};
+	//  - get List of Users from the BackEnd
+    backEnd myBackEnd = new backEnd();
+    String[] myList = myBackEnd.getUsers();
+    //String [] myList = {"A","B","C"};
     
 	final DefaultComboBoxModel model = new DefaultComboBoxModel(myList);
     final JComboBox selectUser = new JComboBox(model);
@@ -109,15 +109,14 @@ public class FrontEnd {
 			public void actionPerformed(ActionEvent e) {
 				
 				String x = null; 
-				// *** TODO ****
-				// backEnd myBackEnd = new backEnd();
+				backEnd myBackEnd = new backEnd();
 				
 				x = newUserInput.getText();
 				//popup box
 				JOptionPane.showMessageDialog(null, ("New User " + x + " Added"));
-				System.out.println("Adding User " + x);
-				// *** TODO ***
-				// backEnd.addMessages(x, null);
+				//System.out.println("Adding User " + x);
+				
+				backEnd.addMessages(x, null);
 				
 				// Refresh list of Users in "model" JComboBox
 				model.addElement(x);
@@ -136,12 +135,10 @@ public class FrontEnd {
 			//newItem has the name of the selected User
 		    String newItem = (String) cb.getSelectedItem();
 		    System.out.println(newItem);
-			// *** TODO **
+		
 		    // Call back end method to get messages for user "newItem"
-			// backEnd myBackEnd = new backEnd();
-		    // String[] messageList = backEnd.getMessages(newItem);
-		    // Temporary hack
-		    String[] messageList = {"one","two","three"};
+			backEnd myBackEnd = new backEnd();
+		    String[] messageList = backEnd.getMessages(newItem);
 		    String messageString = "";
 		    for( String s: messageList)
 			{
@@ -169,15 +166,14 @@ public class FrontEnd {
 			// Get the message that has been typed
 			String messageEntered = enterMessage.getText();
 			System.out.println("create message - user is: " + myUser + " message is " + messageEntered);
-			// *** TODO **
 		    // Call back end method to add the "messageEntered" to "myUser"
-			// backEnd myBackEnd = new backEnd();
-			// backEnd.addMessage(myUser, messageEntered);
+			backEnd myBackEnd = new backEnd();
+			backEnd.addMessage(myUser, messageEntered);
 		    
 			// Next get the List of messages from back end and display in the TextArea
 			// String[] messageList = backEnd.getMessages(myUser);
 		    // Temporary hack
-		    String[] messageList = {"one","two","three"};
+		    //String[] messageList = {"one","two","three"};
 		    String messageString = "";
 		    for( String s: messageList)
 			{
