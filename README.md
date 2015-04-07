@@ -25,10 +25,13 @@ public List<String> read(){
 ##Kavya - Front End
 ### Documentation
 ```java
-Extra methods needed in backend:
+FrontEnd-name of GUI class
+Driver - where main method is stored
 
-class name - backEnd()
-methods: addUser()
+Extra methods needed in backend:
+class name - backEnd
+methods: addUser( String username)
+
 ```
 
 ##Tony - Team Leader & Backend
