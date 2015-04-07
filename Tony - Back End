@@ -1,5 +1,7 @@
     
     
+ public class Backend {
+
     public Map<String, List<String>> data;  
     data = new TreeMap<String, List<String>>();
 
@@ -18,3 +20,4 @@
     Returns a list of every username ALPHABETICALLY ORDERED
   }
 
+}
