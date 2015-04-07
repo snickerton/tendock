@@ -1,3 +1,4 @@
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -116,7 +117,7 @@ public class FrontEnd {
 				JOptionPane.showMessageDialog(null, ("New User " + x + " Added"));
 				System.out.println("Adding User " + x);
 				// *** TODO ***
-				// backEnd.addUser(x);
+				// backEnd.addMessages(x, null);
 				
 				// Refresh list of Users in "model" JComboBox
 				model.addElement(x);
@@ -184,6 +185,9 @@ public class FrontEnd {
 			}
 		    // Display listofMessages in the TextArea myMessages
 		    myMessages.setText(messageString);
+		    
+		    //Blank out myMessages
+		    enterMessage.setText(" ");
 		}
     	
     } );
