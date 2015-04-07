@@ -1,6 +1,8 @@
 # Tendock
 
 
+# #ThanksDavid
+
 ## Noelle & David - Encoder
 ### Documentation
 ```java
