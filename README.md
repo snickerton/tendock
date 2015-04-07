@@ -25,7 +25,10 @@ public List<String> read(){
 ##Kavya - Front End
 ### Documentation
 ```java
- <Kavya insert anything you find necessary for us to know>
+Extra methods needed in backend:
+
+class name - backEnd()
+methods: addUser()
 ```
 
 ##Tony - Team Leader & Backend
