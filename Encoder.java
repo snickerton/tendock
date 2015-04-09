@@ -16,21 +16,38 @@ public class Encoder{
   private List<String> messages;
 
   
-   public Encoder(String filename) 
+  public Encoder(String filename) throws FileNotFoundException
   {
-	  file = new File (filename+".txt");
+	  file = new File ("File.txt");
   }
   
-  public void write (String plaintext)
+  public void write (String message, String username)
   {
-	  int shiftValue = 1;
-
+	  int shiftValue = 11;
+	  List<String> use = read();
+	  
 	  String bar = "";
-
-	  for (char c : plaintext.toCharArray()) {
-	     bar += Character.toString((char) (((c - 'a' + shiftValue) % 26) + 'a'));
+	  for (int i = 0; i < use.size(); i ++){
+		  if (use.get(i).equals(username))
+		  {
+			  for (char c : message.toCharArray()) {
+				     bar += Character.toString((char) (((c - 'a' + shiftValue) % 26) + 'a'));
+				  }
+		  }
+		  else
+		  {
+			  for (char f: username.toCharArray())
+			  {
+				  bar += Character.toString((char) (((f - 'a' + shiftValue % 26) + 'a'))) + "\n" + ".";
+			  }
+			  
+			  for (char c : message.toCharArray()) {
+			     bar += Character.toString((char) (((c - 'a' + shiftValue) % 26) + 'a'));
+			  }
+		  }
+		  
 	  }
-
+	  
 	  try{
 		   
 			FileWriter fout = new FileWriter(file, true);
@@ -40,7 +57,7 @@ public class Encoder{
 				 
 		  	}catch(Exception ex){}
 	  
-	  System.out.println("Encoder wrote:"+bar);
+	  System.out.println(bar);
   }
   
   public List<String> read()
@@ -65,9 +82,15 @@ public class Encoder{
 	 {
 		 String n = "";
 		 String name = messages.get(i);
-		 System.out.println(i);
-		 for (char c : name.toCharArray()){
-			 n += Character.toString((char) (((c - 'a' - 1) % 26) + 'a')) ;
+		 if (name != ".")
+		 {
+			 for (char c : name.toCharArray()){
+				 n += Character.toString((char) (((c - 'a' - 11) % 26) + 'a')) ;
+			 }
+		 }
+		 else
+		 {
+			 n = name;
 		 }
 		 messages.set(i, n); 
 		 System.out.println(messages.get(i));
