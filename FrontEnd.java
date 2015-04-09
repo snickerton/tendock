@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class FrontEnd {
+	List<String> messageList;
 	
 	public FrontEnd() {
 		
@@ -66,11 +67,10 @@ public class FrontEnd {
 	select.setSize(40, 20);
 	
 	//  - get List of Users from the BackEnd
-    backEnd myBackEnd = new backEnd();
-    String[] myList = myBackEnd.getUsers();
+    List<String> myList = BackEnd.getUsers();
     //String [] myList = {"A","B","C"};
     
-	final DefaultComboBoxModel model = new DefaultComboBoxModel(myList);
+	final DefaultComboBoxModel model = new DefaultComboBoxModel();
     final JComboBox selectUser = new JComboBox(model);
 	selectUserBox.add(select);
 	selectUserBox.add(selectUser);
@@ -109,14 +109,14 @@ public class FrontEnd {
 			public void actionPerformed(ActionEvent e) {
 				
 				String x = null; 
-				backEnd myBackEnd = new backEnd();
+				BackEnd myBackEnd = new BackEnd();
 				
 				x = newUserInput.getText();
 				//popup box
 				JOptionPane.showMessageDialog(null, ("New User " + x + " Added"));
 				//System.out.println("Adding User " + x);
 				
-				backEnd.addMessages(x, null);
+				BackEnd.addMessage(x, null);
 				
 				// Refresh list of Users in "model" JComboBox
 				model.addElement(x);
@@ -137,8 +137,8 @@ public class FrontEnd {
 		    System.out.println(newItem);
 		
 		    // Call back end method to get messages for user "newItem"
-			backEnd myBackEnd = new backEnd();
-		    String[] messageList = backEnd.getMessages(newItem);
+			BackEnd myBackEnd = new BackEnd();
+		    messageList = BackEnd.getMessage(newItem);
 		    String messageString = "";
 		    for( String s: messageList)
 			{
@@ -167,8 +167,8 @@ public class FrontEnd {
 			String messageEntered = enterMessage.getText();
 			System.out.println("create message - user is: " + myUser + " message is " + messageEntered);
 		    // Call back end method to add the "messageEntered" to "myUser"
-			backEnd myBackEnd = new backEnd();
-			backEnd.addMessage(myUser, messageEntered);
+			BackEnd myBackEnd = new BackEnd();
+			BackEnd.addMessage(myUser, messageEntered);
 		    
 			// Next get the List of messages from back end and display in the TextArea
 			// String[] messageList = backEnd.getMessages(myUser);
