@@ -16,9 +16,9 @@ public class Encoder{
   private List<String> messages;
 
   
-  public Encoder(String filename) throws FileNotFoundException
+   public Encoder(String filename) 
   {
-	  file = new File ("File.txt");
+	  file = new File (filename+".txt");
   }
   
   public void write (String plaintext)
@@ -40,7 +40,7 @@ public class Encoder{
 				 
 		  	}catch(Exception ex){}
 	  
-	  System.out.println(bar);
+	  System.out.println("Encoder wrote:"+bar);
   }
   
   public List<String> read()
